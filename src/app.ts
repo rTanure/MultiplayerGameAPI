@@ -1,5 +1,8 @@
 import express from "express";
+const cors = require('cors')
+
 import { router } from "./router";
+
 
 
 export class App{
@@ -12,6 +15,7 @@ export class App{
 
     private middleware() {
         this.server.use(express.json())
+        this.server.use(cors())
     }
 
     public router() {
