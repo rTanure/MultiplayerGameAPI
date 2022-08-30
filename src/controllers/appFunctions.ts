@@ -12,7 +12,6 @@ class AppFunctions{
         const time = Number(req.params.time)
 
         const result = data.getAfter(time)
-        console.log(result)
         
         return res.json({
             "data": result
@@ -21,11 +20,20 @@ class AppFunctions{
 
     public appendLine(req: Request, res:Response) {
         let newLine = req.body
-
-        data.appendData(newLine)
+        if(newLine.coords.length>0){
+            data.appendData(newLine)
+        }
 
         return res.json({
             "status": "Linha adicionada com sucesso!"
+        })
+    }
+
+    public reset(req: Request, res: Response) {
+
+        data.reset()
+        res.json({
+            "status": "resetado com sucesso"
         })
     }
 }

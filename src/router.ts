@@ -9,6 +9,7 @@ const router: Router = Router()
 
 router.get('/checkUpdate/:time', appFunctions.checkUpdate)
 router.get('/getData', appFunctions.getData)
+router.get('/reset1337', appFunctions.reset)
 
 router.post('/appendLine', appFunctions.appendLine)
 

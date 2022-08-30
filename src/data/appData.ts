@@ -49,6 +49,10 @@ class Data{
             return datasAfterTime
         }
     }
+
+    public reset() {
+        this.appData = []
+    }
 }
 
 export const data = new Data()
